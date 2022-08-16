@@ -1,0 +1,25 @@
+
+.coupon.data-v-1034d544 {
+	width: 660rpx;
+	display: inline-flex;
+	color: #ffffff;
+}
+.coupon-value.data-v-1034d544 {
+	width: 230px;
+	padding: 20rpx 30rpx;
+	background-color: #d39e00;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-right: 4rpx dashed;
+}
+.warning.data-v-1034d544 {
+	width: 120rpx;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #ffc107;
+	font-size: 30rpx !important;
+}
+
