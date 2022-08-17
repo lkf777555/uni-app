@@ -1,0 +1,34 @@
+
+.loginRegister.data-v-b237504c {
+	width: 100%;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+.loginTop.data-v-b237504c {
+	width: 100%;
+	height: 80px;
+	background-color: #46f4bd;
+}
+.loginUser.data-v-b237504c {
+	width: 100%;
+	height: 460px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	margin-top: -20px;
+	background-color: #ffffff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.loginContent.data-v-b237504c {
+	width: 85%;
+	height: 460px;
+}
+.loginUserName.data-v-b237504c {
+	width: 100%;
+	margin-top: 30px;
+}
+
