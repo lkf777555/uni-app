@@ -1,8 +1,10 @@
 {
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "i-search": "/components/i-search/i-search",
     "i-icon": "/components/i-icon/i-icon",
     "i-coupon": "/components/i-coupon/i-coupon",
-    "i-group": "/components/i-group/i-group"
+    "i-group": "/components/i-group/i-group",
+    "index-skeleton": "/pages/index/index-skeleton"
   }
 }

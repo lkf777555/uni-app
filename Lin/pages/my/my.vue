@@ -21,9 +21,9 @@
 			<view class="myLin-item" v-for="(item,index) in iconsLin">
 				<view class="flex align-center " style="width: 150px;height: 45px;">
 					<image class="myLin-item-img" :src="item.src"></image>
-					<text style="padding-left: 10px;">{{item.name}}</text>
+					<text style="padding-left: 10px;" class="font-weight-lighter">{{item.name}}</text>
 				</view>
-				<view class="">
+				<view>
 					<image class="myLin-item-img" src="/static/icons/右箭头.png"></image>
 				</view>
 			</view>
@@ -36,31 +36,31 @@
 		data() {
 			return {
 				icons: [{
-						src: "/static/icons/订单.png",
+						src: "/static/icons/dd.png",
 						name: "订单"
 					},
 					{
-						src: "/static/icons/消息.png",
+						src: "/static/icons/xx.png",
 						name: "消息"
 					},
 					{
-						src: "/static/icons/收藏.png",
+						src: "/static/icons/sc.png",
 						name: "收藏"
 					},
 					{
-						src: "/static/icons/系统培训学习记录.png",
+						src: "/static/icons/zx.png",
 						name: "在学"
 					}
 				],
 				iconsLin: [{
-						src: "/static/icons/我的优惠卷.png",
+						src: "/static/icons/yyj.png",
 						name: "我的优惠卷"
 					},
 					{
-						src: "/static/icons/常见问题.png",
+						src: "/static/icons/wt.png",
 						name: "常见问题"
 					}, {
-						src: "/static/icons/设置.png",
+						src: "/static/icons/sz.png",
 						name: "设置"
 					}
 				]
@@ -118,6 +118,8 @@
 		justify-content: space-around;
 		border-radius: 10px;
 		box-shadow: 0px 1px 6px rgb(0 0 0 / 10%);
+		font-size: 12px;
+		text-align: center;
 	}
 
 	.myBottomimg {
@@ -130,8 +132,9 @@
 		height: 150px;
 		display: flex;
 		align-items: center;
-		justify-content: center;
+		justify-content: space-around;
 		flex-direction: column;
+		font-size: 14px;
 	}
 
 	.myLin-item {
@@ -140,6 +143,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		border-bottom: 1px solid rgba(0, 0, 0, .1);
 	}
 
 	.myLin-item-img {

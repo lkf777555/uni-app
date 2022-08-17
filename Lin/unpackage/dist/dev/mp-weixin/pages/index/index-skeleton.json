@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-skeleton": "/components/i-skeleton/i-skeleton"
+  },
+  "component": true
+}

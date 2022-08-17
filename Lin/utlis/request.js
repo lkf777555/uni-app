@@ -13,7 +13,8 @@ export const http = (Url, method = "GET", data) => {
 			success: (res) => {
 				if (res.data.msg === "ok") {
 					uni.showToast({
-						title: "数据请求成功",
+						title: "数据拼命加载中,请稍等",
+						icon: "none"
 					})
 					resolve(res.data.data)
 				} else {

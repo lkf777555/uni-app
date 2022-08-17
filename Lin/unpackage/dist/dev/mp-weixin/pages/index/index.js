@@ -104,16 +104,16 @@ var components
 try {
   components = {
     iSearch: function() {
-      return __webpack_require__.e(/*! import() | components/i-search/i-search */ "components/i-search/i-search").then(__webpack_require__.bind(null, /*! @/components/i-search/i-search.vue */ 32))
+      return __webpack_require__.e(/*! import() | components/i-search/i-search */ "components/i-search/i-search").then(__webpack_require__.bind(null, /*! @/components/i-search/i-search.vue */ 37))
     },
     iIcon: function() {
-      return __webpack_require__.e(/*! import() | components/i-icon/i-icon */ "components/i-icon/i-icon").then(__webpack_require__.bind(null, /*! @/components/i-icon/i-icon.vue */ 39))
+      return __webpack_require__.e(/*! import() | components/i-icon/i-icon */ "components/i-icon/i-icon").then(__webpack_require__.bind(null, /*! @/components/i-icon/i-icon.vue */ 44))
     },
     iCoupon: function() {
-      return __webpack_require__.e(/*! import() | components/i-coupon/i-coupon */ "components/i-coupon/i-coupon").then(__webpack_require__.bind(null, /*! @/components/i-coupon/i-coupon.vue */ 44))
+      return __webpack_require__.e(/*! import() | components/i-coupon/i-coupon */ "components/i-coupon/i-coupon").then(__webpack_require__.bind(null, /*! @/components/i-coupon/i-coupon.vue */ 49))
     },
     iGroup: function() {
-      return __webpack_require__.e(/*! import() | components/i-group/i-group */ "components/i-group/i-group").then(__webpack_require__.bind(null, /*! @/components/i-group/i-group.vue */ 51))
+      return __webpack_require__.e(/*! import() | components/i-group/i-group */ "components/i-group/i-group").then(__webpack_require__.bind(null, /*! @/components/i-group/i-group.vue */ 56))
     }
   }
 } catch (e) {
@@ -168,7 +168,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _regenerator = _interopRequireDefault(__webpack_require__(/*! ./node_modules/@babel/runtime/regenerator */ 18));
 
 
 
@@ -189,50 +189,73 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _api = __webpack_require__(/*! ../../utlis/api.js */ 18); //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-var _default = { data: function data() {return { swiper: [], // 轮播图数据
+
+
+
+
+
+var _api = __webpack_require__(/*! ../../utlis/api.js */ 21);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};}var indexSkeleton = function indexSkeleton() {__webpack_require__.e(/*! require.ensure | pages/index/index-skeleton */ "pages/index/index-skeleton").then((function () {return resolve(__webpack_require__(/*! @/pages/index/index-skeleton */ 63));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+{
+  components: {
+    indexSkeleton: indexSkeleton },
+
+  data: function data() {
+    return {
+      swiper: [], // 轮播图数据
       iconNav: [], // 图标分类数据
-      coupon: [], group: [], list: [], imgData: {} };}, onLoad: function onLoad() {this.getIndex(); //首页数据
-    this.getCoupon(); // 优惠卷
-    this.gitGroup(); // 拼团列表
-  }, methods: { //首页数据
-    getIndex: function getIndex() {var _this = this;(0, _api.index)().then(function (res) {_this.swiper = res[1].data;_this.iconNav = res[2].data;
-        _this.list = res[5].data;
-        _this.imgData = res[6];
+      coupon: [], //拼团数据
+      group: [],
+      list: [],
+      imgData: {}, // 底部图片
+      loadingStatus: false };
 
-      });
+  },
+  onLoad: function onLoad() {
+    this.getRequest();
+  },
+  onPullDownRefresh: function onPullDownRefresh() {
+    this.getRequest();
+  },
+  methods: {
+    // 数据加载之前的骨架屏
+    getRequest: function getRequest() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.prev = 0;_context.next = 3;return (
+
+                  _this.getIndex());case 3:_context.next = 5;return (
+                  _this.getCoupon());case 5:_context.next = 7;return (
+                  _this.gitGroup());case 7: // 拼团列表
+                _this.loadingStatus = true;
+                uni.stopPullDownRefresh();_context.next = 14;break;case 11:_context.prev = 11;_context.t0 = _context["catch"](0);
+
+                uni.stopPullDownRefresh();case 14:case "end":return _context.stop();}}}, _callee, null, [[0, 11]]);}))();
+
+
+    },
+    //首页数据
+    getIndex: function getIndex() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:_context2.next = 2;return (
+                  (0, _api.index)().then(function (res) {
+                    _this2.swiper = res[1].data;
+                    _this2.iconNav = res[2].data;
+                    _this2.list = res[5].data;
+                    _this2.imgData = res[6];
+                  }));case 2:case "end":return _context2.stop();}}}, _callee2);}))();
     },
     // 优惠卷
-    getCoupon: function getCoupon() {var _this2 = this;
-      (0, _api.coupon)().then(function (res) {
-        _this2.coupon = res;
-      });
+    getCoupon: function getCoupon() {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:_context3.next = 2;return (
+                  (0, _api.coupon)().then(function (res) {
+                    _this3.coupon = res;
+                  }));case 2:case "end":return _context3.stop();}}}, _callee3);}))();
     },
     // 拼团列表
-    gitGroup: function gitGroup() {var _this3 = this;
-      (0, _api.group)().then(function (res) {
-        _this3.group = res.rows;
-      });
+    gitGroup: function gitGroup() {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:_context4.next = 2;return (
+                  (0, _api.group)().then(function (res) {
+                    _this4.group = res.rows;
+                  }));case 2:case "end":return _context4.stop();}}}, _callee4);}))();
     } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ],[[12,"common/runtime","common/vendor"]]]);
