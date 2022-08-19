@@ -2,14 +2,22 @@
 	<view class="my">
 		<view class="myBg">
 			<view class="myTop">
-				<view class="myTopImg"></view>
+				<view class="myTopImg">
+					<image src="../../static/wxtx.jpg" mode="aspectFill"></image>
+				</view>
 				<view class="myTopRight">
-					<view class="font-weight-light">立即登录</view>
-					<view style="font-size: 12px;">登录解锁更多功能</view>
+					<view v-if="info.username">
+						<view style="height: 35px;" class="font-weight-light">{{info.username}}</view>
+						<view style="font-size: 12px;">暂无更多描述</view>
+					</view>
+					<view v-else>
+						<view class="font-weight-light" @click="addLogin">立即登录</view>
+						<view style="font-size: 12px;">登录解锁更多功能</view>
+					</view>
 				</view>
 			</view>
 			<view class="myBottom">
-				<view v-for="(item,index) in icons" :key="index">
+				<view v-for="(item,index) in icons" :key="index" @click="goToUser(item.name)">
 					<view>
 						<image class="myBottomimg" :src="item.src"></image>
 					</view>
@@ -66,8 +74,41 @@
 				]
 			}
 		},
+		computed: {
+			info() {
+				return this.$store.state.user
+			}
+		},
 		methods: {
+			goToUser(name) {
+				const user = this.$store.state.user
+				if (name == "在学") {
+					uni.switchTab({
+						url: '/pages/learn/learn'
+					});
+				} else if (user.username) {
+					uni.navigateTo({
+						url: '/pages/my/my'
+					});
+					uni.showToast({
+						title: "您已登录",
+						icon: "none",
+						duration: 3000
+					})
+				} else {
+					uni.navigateTo({
+						url: '/pages/login/login'
+					});
+				}
+			},
+			onNavigationBarButtonTap() {
 
+			},
+			addLogin() {
+				uni.navigateTo({
+					url: "/pages/login/login"
+				})
+			}
 		}
 	}
 </script>
@@ -99,13 +140,16 @@
 		border-radius: 50%;
 	}
 
+	.myTopImg image {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+	}
+
 	.myTopRight {
 		width: 60%;
 		height: 60px;
 		padding-left: 20px;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
 		color: white;
 	}
 

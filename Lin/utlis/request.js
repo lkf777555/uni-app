@@ -1,28 +1,18 @@
 const baseURL = "http://demonuxtapi.dishait.cn/mobile"
 
-export const http = (Url, method = "GET", data) => {
+export const http = (Url, method = "GET", data, token = "") => {
 	return new Promise((resolve, reject) => {
 		uni.request({
 			url: baseURL + Url,
 			data: data,
 			header: {
-				'appid': 'bd9d01ecc75dbbaaefce'
+				'appid': 'bd9d01ecc75dbbaaefce',
+				"token": token
 			},
 			timeout: 5000,
 			method: method,
 			success: (res) => {
-				if (res.data.msg === "ok") {
-					uni.showToast({
-						title: "数据拼命加载中,请稍等",
-						icon: "none"
-					})
-					resolve(res.data.data)
-				} else {
-					uni.showToast({
-						title: "数据请求失败",
-						icon: "none"
-					})
-				}
+				resolve(res.data.data)
 			},
 		})
 	})

@@ -1,5 +1,6 @@
 import App from './App'
-
+import store from "@/store/index"
+Vue.prototype.$store = store
 // #ifndef VUE3
 import Vue from 'vue'
 Vue.config.productionTip = false
@@ -17,7 +18,7 @@ import {
 export function createApp() {
 	const app = createSSRApp(App)
 	return {
-		app
+		app,
 	}
 }
 // #endif

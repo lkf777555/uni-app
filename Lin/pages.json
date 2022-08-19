@@ -20,15 +20,43 @@
 			"style": {
 				"navigationBarTitleText": "我的",
 				"navigationBarBackgroundColor": "#5ccc84",
-				"navigationBarTextStyle": "white"
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "menu",
+							"color": "white",
+							"fontSize": "26px",
+							"float": "right"
+						}]
+					}
+				}
 			}
 		}, {
 			"path": "pages/login/login",
 			"style": {
 				"navigationBarTitleText": "",
 				"navigationBarBackgroundColor": "#42f8b7",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"type": "menu",
+							"color": "white",
+							"fontSize": "26px",
+							"float": "right"
+						}]
+					}
+				}
+			}
+		}, {
+			"path": "pages/bind-phone/bind-phone",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#42f8b7",
 				"navigationBarTextStyle": "white"
 			}
+
 		}
 	],
 	"globalStyle": {

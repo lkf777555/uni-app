@@ -10,7 +10,7 @@
 				</view>
 			</uni-forms-item>
 		</uni-forms>
-		<button class="loginSubForm" @click="login">登录</button>
+		<button class="loginSubForm" @click="login">{{flag?'登录':'注册'}}</button>
 	</view>
 </template>
 
@@ -31,7 +31,7 @@
 		},
 		methods: {
 			login() {
-				console.log(this.formData);
+				this.$emit('login', this.formData)
 			},
 		},
 		computed: {
